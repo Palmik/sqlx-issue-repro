@@ -1,0 +1,16 @@
+CREATE TABLE foo (
+    id BIGINT PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE baz (
+    id BIGINT PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE bar (
+    id BIGINT PRIMARY KEY,
+    foo_id BIGINT NOT NULL REFERENCES foo(id),
+    baz_id BIGINT REFERENCES baz(id),
+    name TEXT NOT NULL
+);
